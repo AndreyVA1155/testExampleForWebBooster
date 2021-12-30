@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id='text1' style='display: none;'>
+    текст доступный при нажаии на ссылку
+</div>
+<span id='ontext1' style='display: inline;'>
+<a href="javascript:on('1');">показать скрытый текст</a>
+</span>
+<span id='offtext1' style='display: none;'>
+<a href="javascript:off('1');">убрать скрытый текст</a>
+</span>
+
+<script>
+    function on(n){
+        eval("document.all.text"+n+".style.display='block';");
+        eval("document.all.ontext"+n+".style.display='none';");
+        eval("document.all.offtext"+n+".style.display='inline';");
+    }
+    function off(n){
+        eval("document.all.text"+n+".style.display='none';");
+        eval("document.all.ontext"+n+".style.display='inline';");
+        eval("document.all.offtext"+n+".style.display='none';");
+    }
+</script>
+</body>
+</html>
+
